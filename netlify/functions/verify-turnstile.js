@@ -4,13 +4,13 @@
 const crypto = require('node:crypto');
 
 const ALLOWED_ORIGINS = new Set([
-  'https://cinderellahomecare.com.tr',
-  'https://www.cinderellahomecare.com.tr',
+  'https://cindirellahomecare.com.tr',
+  'https://www.cindirellahomecare.com.tr',
 ]);
 
 const ALLOWED_HOSTNAMES = new Set([
-  'cinderellahomecare.com.tr',
-  'www.cinderellahomecare.com.tr',
+  'cindirellahomecare.com.tr',
+  'www.cindirellahomecare.com.tr',
 ]);
 
 const RATE_LIMIT_WINDOW_SECONDS = 10 * 60;
@@ -36,7 +36,7 @@ async function checkAndCount(ip) {
     throw new Error('atomic_rate_limit_not_configured');
   }
 
-  const key = `cinderella:verify-rate:${sha256(ip)}`;
+  const key = `cindirella:verify-rate:${sha256(ip)}`;
 
   const script = [
     "local count = redis.call('INCR', KEYS[1])",
